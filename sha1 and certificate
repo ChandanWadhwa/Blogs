@@ -1,0 +1,29 @@
+Command for SHA! and Certificate-
+
+for debug key--
+
+keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore -list -v
+
+for released key--
+
+keytool -exportcert -alias appkey -keystore /home/oodles/keys/AppKey.jks -list -v
+
+Password is- android
+
+Certificate fingerprints:
+	 MD5:  59:87:FA:32:ED:FC:8D:DC:68:20:EE:F8:41:D4:DF:20
+	 SHA1: FA:9D:0B:CD:5A:AA:E7:2C:3C:76:EE:A8:3E:AB:C3:4F:31:F1:9D:1C
+	 SHA256: 96:BD:2E:9F:B6:64:15:65:7E:01:63:50:B5:EA:FA:81:FC:0F:EA:32:38:18:5D:56:49:6D:CE:A6:F0:94:52:17
+	 Signature algorithm name: SHA256withRSA
+	 Version: 3
+
+for debug key--
+
+keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64
+
+for released key--
+
+keytool -exportcert -alias appkey -keystore /home/oodles/keys/AppKey.jks | openssl sha1 -binary | openssl base64
+
+
+
